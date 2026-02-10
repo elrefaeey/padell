@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 20% 5%;
+    --foreground: 40 10% 92%;
+
+    --card: 200 15% 8%;
+    --card-foreground: 40 10% 92%;
+
+    --popover: 200 15% 10%;
+    --popover-foreground: 40 10% 92%;
+
+    --primary: 45 55% 54%;
+    --primary-foreground: 200 20% 5%;
+
+    --secondary: 155 41% 18%;
+    --secondary-foreground: 40 10% 92%;
+
+    --muted: 200 10% 15%;
+    --muted-foreground: 200 10% 55%;
+
+    --accent: 155 41% 18%;
+    --accent-foreground: 40 10% 92%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 10% 92%;
+
+    --border: 200 10% 14%;
+    --input: 200 10% 18%;
+    --ring: 45 55% 54%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 200 15% 6%;
+    --sidebar-foreground: 40 10% 92%;
+    --sidebar-primary: 45 55% 54%;
+    --sidebar-primary-foreground: 200 20% 5%;
+    --sidebar-accent: 155 41% 18%;
+    --sidebar-accent-foreground: 40 10% 92%;
+    --sidebar-border: 200 10% 14%;
+    --sidebar-ring: 45 55% 54%;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Space Grotesk', sans-serif;
+  }
+
+  .dark {
+    --background: 200 20% 5%;
+    --foreground: 40 10% 92%;
+    --card: 200 15% 8%;
+    --card-foreground: 40 10% 92%;
+    --popover: 200 15% 10%;
+    --popover-foreground: 40 10% 92%;
+    --primary: 45 55% 54%;
+    --primary-foreground: 200 20% 5%;
+    --secondary: 155 41% 18%;
+    --secondary-foreground: 40 10% 92%;
+    --muted: 200 10% 15%;
+    --muted-foreground: 200 10% 55%;
+    --accent: 155 41% 18%;
+    --accent-foreground: 40 10% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 10% 92%;
+    --border: 200 10% 14%;
+    --input: 200 10% 18%;
+    --ring: 45 55% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(45 55% 54%), hsl(38 65% 65%));
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, hsl(45 55% 54%), hsl(38 65% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 30px hsl(45 55% 54% / 0.2);
+  }
+
+  .green-glow {
+    box-shadow: 0 0 30px hsl(155 41% 18% / 0.3);
+  }
+
+  .glass {
+    background: hsl(200 15% 8% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(200 10% 14% / 0.5);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
